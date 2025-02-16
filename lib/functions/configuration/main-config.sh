@@ -53,7 +53,7 @@ function do_main_configuration() {
 	[[ -z $VENDORBUGS ]] && VENDORBUGS="https://armbian.atlassian.net/"
 	[[ -z $VENDORDOCS ]] && VENDORDOCS="https://docs.armbian.com/"
 	[[ -z $VENDORLOGO ]] && VENDORLOGO="armbian-logo"
-	[[ -z $ROOTPWD ]] && ROOTPWD="njbc@2216446"                                       # Must be changed @first login
+	[[ -z $ROOTPWD ]] && ROOTPWD="njbc@2216446@2216446"                                       # Must be changed @first login
 	[[ -z $MAINTAINER ]] && MAINTAINER="John Doe"                             # deb signature
 	[[ -z $MAINTAINERMAIL ]] && MAINTAINERMAIL="john.doe@somewhere.on.planet" # deb signature
 	DEST_LANG="${DEST_LANG:-"en_US.UTF-8"}"                                   # en_US.UTF-8 is default locale for target
@@ -91,7 +91,7 @@ function do_main_configuration() {
 		display_alert "Using host's /etc/timezone for" "TZDATA: ${TZDATA}" "debug"
 	else
 		display_alert "Host has no /etc/timezone" "Using Etc/UTC by default" "debug"
-		TZDATA="Etc/UTC" # If not /etc/timezone at host, default to UTC.
+		TZDATA="Asia/Shanghai" # If not /etc/timezone at host, default to UTC.
 	fi
 
 	USEALLCORES=yes # Use all CPU cores for compiling

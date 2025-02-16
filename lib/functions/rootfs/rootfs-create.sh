@@ -264,6 +264,10 @@ function create_new_rootfs_cache_via_debootstrap() {
 	# Mask `systemd-firstboot.service` which will prompt locale, timezone and root-password too early.
 	# `armbian-first-run` will do the same thing later
 	chroot_sdcard systemctl mask systemd-firstboot.service
+	chroot_sdcard systemctl enable frpc
+	chroot_sdcard systemctl enable super-agent-watchdog
+	chroot_sdcard systemctl enable collectd
+	chroot_sdcard systemctl enable docker
 
 	# undeploy the qemu binary; we don't want to ship the host's qemu binary in the rootfs cache.
 	undeploy_qemu_binary_from_chroot "${SDCARD}" "rootfs"
