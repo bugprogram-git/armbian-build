@@ -128,6 +128,8 @@ function prepare_partitions() {
 	# stage: calculate rootfs size
 	declare -g -i rootfs_size
 	rootfs_size=$(du --apparent-size -sm "${SDCARD}"/ | cut -f1) # MiB
+	#防止空间不够
+	rootfs_size=3072
 	display_alert "Current rootfs size" "$rootfs_size MiB" "info"
 
 	call_extension_method "prepare_image_size" "config_prepare_image_size" <<- 'PREPARE_IMAGE_SIZE'
