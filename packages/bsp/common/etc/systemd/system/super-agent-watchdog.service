@@ -1,0 +1,16 @@
+[Unit]
+Description=super-agent watchdog service
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+User=root
+Environment="OSVersion=hailiangyun-common-2025-02-16"
+ExecStart=/bin/bash /usr/local/super-agent/watchdog.sh start
+ExecStopPost=/bin/bash /usr/local/super-agent/watchdog.sh stop
+KillMode=control-group
+
+[Install]
+WantedBy=multi-user.target

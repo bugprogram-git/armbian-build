@@ -42,3 +42,12 @@ usbutils
 vlan
 wget
 wpasupplicant
+collectd
+rrdtool
+librrd-dev
+qrencode
+docker.io
+jq
+wget
+bmon
+nload
